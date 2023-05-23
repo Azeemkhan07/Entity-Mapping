@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function DataTable() {
-    const [data, setData] = useState(null);
+function DataTable({ companies }) {
     const [filteredData, setFilteredData] = useState(null);
     const [sectorFilter, setSectorFilter] = useState('');
     const [feeFilterMin, setFeeFilterMin] = useState('');
@@ -9,30 +8,20 @@ function DataTable() {
     const [showSectorFilter, setShowSectorFilter] = useState(false);
     const [showFeeFilter, setShowFeeFilter] = useState(false);
 
-    const url = 'https://run.mocky.io/v3/7cb595ed-2882-4dc7-8179-d38d0b9c9d13';
-
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error('Error fetching data: ' + response.status);
-                }
-                const jsonData = await response.json();
-                // console.log('jsonData:', jsonData);
-                setData(jsonData);
-                setFilteredData(jsonData); 
-            } catch (error) {
-                console.error('Error fetching data:', error);
+        const applyFilters = (sector, feeMin, feeMax) => {
+            if (companies) {
+                const filtered = companies.filter(
+                    (item) =>
+                        item.sector.toLowerCase().includes(sector.toLowerCase()) &&
+                        (feeMin === '' || parseFloat(item.fees.amount) >= parseFloat(feeMin)) &&
+                        (feeMax === '' || parseFloat(item.fees.amount) <= parseFloat(feeMax))
+                );
+                setFilteredData(filtered);
             }
         };
-
-        fetchData();
-    }, []);
-
-    useEffect(() => {
         applyFilters(sectorFilter, feeFilterMin, feeFilterMax);
-    }, [sectorFilter, feeFilterMin, feeFilterMax]);
+    }, [sectorFilter, feeFilterMin, feeFilterMax, companies]);
 
     const handleSectorFilterChange = (event) => {
         const { value } = event.target;
@@ -49,23 +38,6 @@ function DataTable() {
         setFeeFilterMax(value);
     };
 
-    const applyFilters = (sector, feeMin, feeMax) => {
-        // console.log('sector:', sector);
-        // console.log('feeMin:', feeMin);
-        // console.log('feeMax:', feeMax);
-        if (data) {
-            const filtered = data.filter(
-                (item) =>
-                    item.sector.toLowerCase().includes(sector.toLowerCase()) &&
-                    (feeMin === '' || parseFloat(item.fees.amount) >= parseFloat(feeMin)) &&
-                    (feeMax === '' || parseFloat(item.fees.amount) <= parseFloat(feeMax))
-            );
-            // console.log('filteredData:', filtered);
-            setFilteredData(filtered);
-        }
-    };
-
-
     const toggleSectorFilter = () => {
         setShowSectorFilter(!showSectorFilter);
     };
@@ -75,8 +47,8 @@ function DataTable() {
     };
 
     return (
-        <div>
-            {data ? (
+        <div> 
+            {companies ? (
                 <div>
                     <table role="table" aria-label="Data Table">
                         <thead>
@@ -111,7 +83,7 @@ function DataTable() {
                                             <input
                                                 type="number"
                                                 min="0"
-                                                step="0.01"
+                                                step="1.00"
                                                 placeholder="Min"
                                                 value={feeFilterMin}
                                                 onChange={handleFeeFilterMinChange}
@@ -120,7 +92,7 @@ function DataTable() {
                                             <input
                                                 type="number"
                                                 min="0"
-                                                step="0.01"
+                                                step="1.00"
                                                 placeholder="Max"
                                                 value={feeFilterMax}
                                                 onChange={handleFeeFilterMaxChange}

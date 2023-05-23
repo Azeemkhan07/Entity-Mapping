@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import DataTable from "../DataTable";
+import DataTable from "../components/DataTable";
 
 describe("Loading Screen", () => {
   it("should render without throwing an error and render loading message when data is null", () => {

@@ -1,12 +1,11 @@
-// import MapCompany from './MapCompany'
-import DataTable from "./DataTable.jsx";
-
 import "./App.css";
+import React from "react";
+import DataFetching from "./components/DataFetching";
 
 function App() {
   return (
     <div className="App">
-      <DataTable />
+      <DataFetching />
     </div>
   );
 }
