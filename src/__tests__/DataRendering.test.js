@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import DataTable from "../DataTable";
+import DataTable from "../components/DataTable";
 
-describe("DataTable", () => {
-    it("fetches and renders data correctly from the API", async () => {
+describe("DataTable- Data Fetching & render", () => {
+    it("renders data correctly", async () => {
         const mockData = [
             {
                 id: 1,
@@ -34,25 +34,13 @@ describe("DataTable", () => {
             },
         ];
 
-        // Mock the fetch function to return the mock data
-        jest.spyOn(global, "fetch").mockResolvedValue({
-            ok: true,
-            json: jest.fn().mockResolvedValue(mockData),
-        });
+        render(<DataTable companies={mockData} />);
 
-        render(<DataTable />);
-
-        // Wait for the data to be fetched and rendered
         await screen.findByText("1");
 
-        // Verify that the data is rendered correctly
         expect(screen.getByText("Photobug")).toBeInTheDocument();
-        // expect(screen.getAllByText("Consumer Services")).toHaveLength(2);
         expect(screen.getAllByText("Consumer Services")[0]).toBeInTheDocument();
         expect(screen.getByText("SIRI")).toBeInTheDocument();
         expect(screen.getByText("288 Stuart Hill")).toBeInTheDocument();
-        // Add more assertions to verify other data elements
-        // Restore the original fetch function
-        global.fetch.mockRestore();
     });
 });
