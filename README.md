@@ -2,78 +2,65 @@
 
 <p align="center">This project aims to develop a cutting-edge web application that leverages modern technologies such as React, CSS, HTML, JavaScript, Babel, Jest, React Testing Library, and Leaflet to create an advanced and intuitive platform for visualizing company data. By seamlessly integrating with an external API, This solution enables users to fetch up-to-date company information and presents it in a structured table format. Moreover, our application incorporates interactive mapping functionalities, allowing users to locate companies geographically and apply filters based on sector and fee ranges.</p>
 
+## Pre-Build plan and the decisions made while solving the task
 
-# Build Instructions
+#### Understanding the requirements:
+1. Create a web application to display company data.
+2. Retrieve company data from an API in JSON format.
+3. Present the data in a table.
+4. Map the company locations on a map using latitude and longitude information.
+5. Perform tests to validate the code.
 
-## Prerequisites
-- Install [Node.js](https://nodejs.org/) version 12 or higher.
-- Ensure [Git](https://git-scm.com/) is installed on your system.
+#### Designing the application structure:
+1. Identified the main components required for the application, such as the DataFetching component, DataMap component, and DataTable component.
+2. Determined the data flow between components, such as passing the company data from the DataFetching component to the DataMap and DataTable components.
+3. Designed the layout and styling of the application using CSS.
 
-## Installation
-1. Clone the repository: `git clone https://github.com/Azeemkhan07/KPMG-Legal-Tech-Test.git`
-2. Change to the project directory: `cd repository`
-3. Install project dependencies: `npm install`
+#### Implemented fetching and displaying the data:
+1. Created a fetchData function that fetches the company data from the API using the Fetch API.
+2. Used the useEffect hook to fetch the data and update the state in the DataFetching component.
+3. Set up state variables to store the fetched data and loading status.
+4. Displayed a loading message while the data is being fetched.
+5. Passed the company data as props to the DataMap and DataTable components.
 
-## Building the Project
-1. Run the build command: `npm run build`
-2. Wait for the build process to complete.
+#### Implemented the DataTable component:
+1. Created a DataTable component that receives the company data as props.
+2. Renderd a table with table headers and rows to display the company data.
+3. Formated and displayed the necessary information such as company name, sector, stock symbol, address, latitude, longitude, fees, etc.
+4. Implemented filtering functionality, such as filtering by sector or fee range.
+5. Styled the table using CSS.
 
-## Running the Project
-1. Start the application: `npm start`
-2. Access the application at [http://localhost:3000](http://localhost:3000).
+#### Implemented the DataMap component using Leaflet:
+1. Installed Leaflet and all required plugins.
+2. Created a DataMap component that renders a map using the MapContainer component from react-leaflet.
+3. Used the company data passed as props to map the company locations onto the map using latitude and longitude information.
+4. Customized the map markers using Leaflet's Marker and Popup components.
+5. Styled the map using CSS or Leaflet's built-in styling options.
 
-## Additional Scripts
-- To run tests: `npm run test`
-- To eject from Create React App: `npm run eject`
+#### Writing tests using Jest and React Testing Library:
+1. Wrote unit tests for the DataFetching component, ensuring that data is fetched correctly and state is updated accordingly.
+2. Wrote tests for the DataMap component, checking if the map and markers are rendered correctly based on the provided company data.
+3. Wrote tests for the DataTable component, ensuring that the table is rendered correctly and filtering functionality works as expected.
+4. Used React Testing Library's querying and interaction methods to test component behavior and user interactions.
 
-## Dependencies
-- [leaflet](https://www.npmjs.com/package/leaflet): Version ^1.9.3
-- [react](https://www.npmjs.com/package/react): Version ^18.2.0
-- [react-dom](https://www.npmjs.com/package/react-dom): Version ^18.2.0
-- [react-leaflet](https://www.npmjs.com/package/react-leaflet): Version ^4.2.1
-- [react-leaflet-markercluster](https://www.npmjs.com/package/react-leaflet-markercluster): Version ^3.0.0-rc1
-- [react-scripts](https://www.npmjs.com/package/react-scripts): Version 5.0.1
-- [web-vitals](https://www.npmjs.com/package/web-vitals): Version ^2.1.4
+#### Handling errors and edge cases:
+1. Implemented error handling for failed API requests or incorrect data responses.
+2. Displayed appropriate error messages or fallback components to provide a good user experience.
 
-## Development Dependencies
-- [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env): Version ^7.21.5
-- [@babel/preset-react](https://www.npmjs.com/package/@babel/preset-react): Version ^7.18.6
-- [@testing-library/jest-dom](https://www.npmjs.com/package/@testing-library/jest-dom): Version ^5.16.5
-- [@testing-library/react](https://www.npmjs.com/package/@testing-library/react): Version ^14.0.0
-- [babel-jest](https://www.npmjs.com/package/babel-jest): Version ^29.5.0
-- [jest](https://www.npmjs.com/package/jest): Version ^27.5.1
+#### Optimizing and refine the application:
+1. Optimized the performance of the application by minimizing unnecessary re-renders and optimizing API calls.
+2. Refactored the code to follow best practices, improve readability, and maintainability.
+3. Considered performance optimizations for the map component, such as clustering markers for better performance with a large number of companies.
+
+#### Test the application thoroughly:
+1. Tested the application on different browsers and devices to ensure compatibility.
+2. Performed manual testing to verify that all features and functionalities are working as expected.
+3. Used debugging tools like ESLint to identify and fix any issues or errors that may arise.
 
 ## Screenshots
 
 ![Screenshot (4)](https://github.com/Azeemkhan07/KPMG-Legal-Tech-Test/assets/106512671/0488b6b6-4ec8-4e8e-af4d-c3a0a7ff0760)
 ![Screenshot (9)](https://github.com/Azeemkhan07/KPMG-Legal-Tech-Test/assets/106512671/5aacb7bf-a8e2-4f01-8e0a-41e55194ff6d)
-
-## Available Commands
-
-In the project directory, you can run:
-
-### `npm start" : "react-scripts start"`,
-
-The app is built using `create-react-app` so this command Runs the app in Development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. You also need to run the server file as well to completely run the app. The page will reload if you make edits.
-You will also see any lint errors in the console.
-
-### `"npm run build": "react-scripts build"`,
-
-Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes. Your app will be ready to deploy!
-
-### `"npm run test": "react-scripts test"`,
-
-Launches the test runner in the interactive watch mode.
-
-### `"npm run dev": "concurrently "nodemon server" "npm run start"`,
-
-For running the server and app together I am using concurrently this helps a lot in the MERN application as it runs both the server (client and server) concurrently. So you can work on them both together.
-
-### `"serve": "node server"`
-
-For running the server file on you can use this command.
-
-### `npm run serve`
 
 ## Author
 
