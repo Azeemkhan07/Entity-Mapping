@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+<h1 align="center">KPMG-Legal-Tech</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">This project aims to develop a cutting-edge web application that leverages modern technologies such as React, CSS, HTML, JavaScript, Babel, Jest, React Testing Library, and Leaflet to create an advanced and intuitive platform for visualizing company data. By seamlessly integrating with an external API, This solution enables users to fetch up-to-date company information and presents it in a structured table format. Moreover, our application incorporates interactive mapping functionalities, allowing users to locate companies geographically and apply filters based on sector and fee ranges.</p>
 
-## Available Scripts
+
+# Build Instructions
+
+## Prerequisites
+- Install [Node.js](https://nodejs.org/) version 12 or higher.
+- Ensure [Git](https://git-scm.com/) is installed on your system.
+
+## Installation
+1. Clone the repository: `git clone https://github.com/Azeemkhan07/KPMG-Legal-Tech-Test.git`
+2. Change to the project directory: `cd repository`
+3. Install project dependencies: `npm install`
+
+## Building the Project
+1. Run the build command: `npm run build`
+2. Wait for the build process to complete.
+
+## Running the Project
+1. Start the application: `npm start`
+2. Access the application at [http://localhost:3000](http://localhost:3000).
+
+## Additional Scripts
+- To run tests: `npm run test`
+- To eject from Create React App: `npm run eject`
+
+## Dependencies
+- [leaflet](https://www.npmjs.com/package/leaflet): Version ^1.9.3
+- [react](https://www.npmjs.com/package/react): Version ^18.2.0
+- [react-dom](https://www.npmjs.com/package/react-dom): Version ^18.2.0
+- [react-leaflet](https://www.npmjs.com/package/react-leaflet): Version ^4.2.1
+- [react-leaflet-markercluster](https://www.npmjs.com/package/react-leaflet-markercluster): Version ^3.0.0-rc1
+- [react-scripts](https://www.npmjs.com/package/react-scripts): Version 5.0.1
+- [web-vitals](https://www.npmjs.com/package/web-vitals): Version ^2.1.4
+
+## Development Dependencies
+- [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env): Version ^7.21.5
+- [@babel/preset-react](https://www.npmjs.com/package/@babel/preset-react): Version ^7.18.6
+- [@testing-library/jest-dom](https://www.npmjs.com/package/@testing-library/jest-dom): Version ^5.16.5
+- [@testing-library/react](https://www.npmjs.com/package/@testing-library/react): Version ^14.0.0
+- [babel-jest](https://www.npmjs.com/package/babel-jest): Version ^29.5.0
+- [jest](https://www.npmjs.com/package/jest): Version ^27.5.1
+
+## Screenshots
+
+![Screenshot (4)](https://github.com/Azeemkhan07/KPMG-Legal-Tech-Test/assets/106512671/0488b6b6-4ec8-4e8e-af4d-c3a0a7ff0760)
+![Screenshot (9)](https://github.com/Azeemkhan07/KPMG-Legal-Tech-Test/assets/106512671/5aacb7bf-a8e2-4f01-8e0a-41e55194ff6d)
+
+## Available Commands
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start" : "react-scripts start"`,
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The app is built using `create-react-app` so this command Runs the app in Development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. You also need to run the server file as well to completely run the app. The page will reload if you make edits.
+You will also see any lint errors in the console.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `"npm run build": "react-scripts build"`,
 
-### `npm test`
+Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes. Your app will be ready to deploy!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `"npm run test": "react-scripts test"`,
 
-### `npm run build`
+Launches the test runner in the interactive watch mode.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `"npm run dev": "concurrently "nodemon server" "npm run start"`,
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For running the server and app together I am using concurrently this helps a lot in the MERN application as it runs both the server (client and server) concurrently. So you can work on them both together.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `"serve": "node server"`
 
-### `npm run eject`
+For running the server file on you can use this command.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `npm run serve`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Author
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Abdul Azeem Khan**
