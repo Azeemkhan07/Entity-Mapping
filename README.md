@@ -59,8 +59,9 @@
 
 ## Screenshots
 
-![Screenshot (4)](https://github.com/Azeemkhan07/KPMG-Legal-Tech-Test/assets/106512671/0488b6b6-4ec8-4e8e-af4d-c3a0a7ff0760)
-![Screenshot (9)](https://github.com/Azeemkhan07/KPMG-Legal-Tech-Test/assets/106512671/5aacb7bf-a8e2-4f01-8e0a-41e55194ff6d)
+![Screenshot (9)](https://github.com/Azeemkhan07/KPMG-Legal-Tech-Test/assets/106512671/aa2ae745-c98d-4b57-ab80-56f1235435b0)
+![Screenshot (6)](https://github.com/Azeemkhan07/KPMG-Legal-Tech-Test/assets/106512671/b4cf132c-e8d8-48f0-a891-ca69f43fd5c6)
+![Screenshot (8)](https://github.com/Azeemkhan07/KPMG-Legal-Tech-Test/assets/106512671/cb69adf7-449c-4616-8124-8121142b0a10)
 
 ## Author
 
