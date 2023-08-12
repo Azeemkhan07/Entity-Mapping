@@ -1,4 +1,4 @@
-<h1 align="center">KPMG-Legal-Tech</h1>
+<h1 align="center">Entity Mapping</h1>
 
 <p align="center">This project aims to develop a cutting-edge web application that leverages modern technologies such as React, CSS, HTML, JavaScript, Babel, Jest, React Testing Library, and Leaflet to create an advanced and intuitive platform for visualizing company data. By seamlessly integrating with an external API, This solution enables users to fetch up-to-date company information and presents it in a structured table format. Moreover, our application incorporates interactive mapping functionalities, allowing users to locate companies geographically and apply filters based on sector and fee ranges.</p>
 
